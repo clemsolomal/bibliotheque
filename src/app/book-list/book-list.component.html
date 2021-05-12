@@ -1,0 +1,82 @@
+<div class="cadre">
+  <h2>Vos livres</h2>
+  <div id="carouselExample" class="carousel slide" data-ride="carousel">
+    <ol class= "carousel-indicators">
+      <li data-target= "#carouselExample" *ngFor="let book of books; let i=index" data-slide-to="i" [ngClass]="{'active': i==0}"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div        
+         class= "item" *ngFor="let book of books; let isFirst=first" [class.active]="isFirst"
+        >
+        <img class="h-50 w-50"  [src]="book.photo"><!--../../assets/petitpays.jpg-->
+        
+        <div class="carousel-caption d-none d-md-block">
+        <h3>{{ book.title }}</h3>
+        <p>{{ book.author }}</p>
+        <p>{{ book.synopsis }}</p>
+        <button id= "suppr"class="btn btn-default" (click)="onDeleteBook(book)">
+          Retirer le livre de la bibliothèque
+        </button>
+        </div>
+      </div>
+    </div>
+    <a class=" left carousel-control" href='#carouselExample' role="button" data-slide="prev" (click)="onPreventDefault($event)">
+      <span class="icon-prev" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+
+    <a class=" right carousel-control" href='#carouselExample'  role="button" data-slide="next" (click)="onPreventDefault($event)">
+      <span class="icon-next" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
+<!--<ngb-carousel
+[showNavigationArrows]="true" 
+[showNavigationIndicators]="true"
+[keyboard]="true"
+[pauseOnHover]="true"
+[wrap]="true"
+[activeId]="'0'"
+>
+<ng-container *ngFor="let book of books; let i=index">
+  <ng-template ngbSlide id="{{i}}" alt = "{{i}}">
+      <div class="picsum-img-wrapper" >
+      <img [src]="book.photo">
+    </div>
+    <div class="carousel-caption">
+      <h3>{{ book.title }}</h3>
+      <p>{{ book.author }}</p>
+      <button class="btn btn-default" (click)="onDeleteBook(book)">
+        <span class="glyphicon glyphicon-minus"></span>
+      </button>
+    </div>
+  </ng-template>
+</ng-container>
+</ngb-carousel>-->
+
+<!--<ngb-carousel>
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img src="../../assets/petitpays.jpg" alt="Angular Carousel 1">
+    </div>
+    <div class="carousel-caption">
+      <h3>Title Goes Here</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img src="../../assets/bibliotheque.jpg" alt="Angular Carousel 2">
+    </div>
+    <div class="carousel-caption">
+      <h3>Title Goes Here</h3>
+      <p>Consectetur tortor volutpat pretium.</p>
+    </div>
+  </ng-template>
+</ngb-carousel>-->
+
+
+
+

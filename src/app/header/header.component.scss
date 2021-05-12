@@ -1,0 +1,16 @@
+nav{
+    background-color:#330000;
+    color: white;
+}
+
+a{
+    background-color: #330000;
+    color: white;
+}
+.navbar-expand-lg .navbar-nav>.active>a:hover,
+.navbar-expand-lg .navbar-nav>.active>a:focus,
+.navbar-expand-lg .navbar-nav>li>a:hover,
+.navbar-expand-lg .navbar-nav>li>a:focus{
+  background-color:#bf4d3e;
+  color: white;
+}
